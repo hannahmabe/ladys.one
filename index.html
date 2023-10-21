@@ -1,29 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-        <style>
-   
 
-    #image-container img {
-        max-width: 200%;
-        max-height: 100%;
-    }
-	
-	.container {
-			margin-left: 100px;
-			}
-			
-	.input-container {
-	
-		display: flex;
-		align-items: left;
-		justify-content: left;
-			
-			
-	
-		
-			
-</style>
 
 <script>
 			function copyText() {
@@ -105,11 +83,20 @@
     }
 	
 	#image-container {
-        width: 480px; /* Set the desired width */
-        height: 380px; /* Set the desired height */
-        border: px solid #ccc; /* Add a border for styling */
-        margin-left: 433px; /* Center the image horizontally */
-    }
+    /* Make the image container take up the full width and height of the parent container */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Hide any image overflow beyond the container */
+}
+
+	#image-container img {
+    /* Make the image stretch to fill the image container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+}
+    
 	input[type = "text"] {
 	
 		display: block;
@@ -127,12 +114,7 @@
 		outline: none;
 		border: 2px solid #007bff;
 		}
-	#image-contain {
-        width: 480px; /* Set the desired width */
-        height: 380px; /* Set the desired height */
-        border: px solid #ccc; /* Add a border for styling */
-        margin-left: 50px; /* Center the image horizontally */
-    }
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -316,7 +298,7 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
 
         <div class="tab-content">
             <div id="details" class="tab-pane fade in active">
-                <p style="font-size: 18px; font-weight: bold; color: #FFB6C1;">After Your Payments, screenshot your receipts and send to the Escort you are booking for confirmation.</p>
+                <p style="font-size: 18px; font-weight: bold; color: #FFB6C1;">After your payments,screenshot your receipts and send to the Escort you are booking for confirmation.</p>
 				<p>ACCOUNT NAME: JOSEPH CARSON CURTIS</p>
 				<p>BANK NAME: WOODFOREST</p>
 				<p>ACCOUNT NUMBER: 1357446457</p>
@@ -338,7 +320,7 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
            
 
             <div id="Apple" class="tab-pane fade">
-              <div id="image-contain">
+              <div id="image-container">
                     <img src="img/apple-pay.jpg" alt="Your Image Description">
                 </div>
                 
