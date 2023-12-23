@@ -117,44 +117,47 @@ main {
     padding: 20px;
 }
 
-.payment-form {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f9f9f9;
+
+.parent-container {
+  position: relative; /* Set the parent container to relative positioning */
+  width: 600px; /* Set the width of the parent container */
+  height: 500px; /* Set the height of the parent container */
+  border: 2px solid pink; /* Pink border */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Hide the parts of circular image outside the parent */
+  text-align: center; /* Align text in the center */
+
+  /* Additional styling for demonstration purposes */
+  padding: 10px; /* Add some padding for visibility */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+
+.circular-image {
+  width: 150px; /* Set the width and height to create a circular shape */
+  height: 150px;
+  border-radius: 50%; /* Makes the div circular */
+  overflow: hidden; /* Clips the content outside the circle */
+  
+    /* Position the circular image within the parent container */
+  position: absolute;
+  top: 25%; /* Adjust top position */
+  left: 50%; /* Adjust left position */
+  transform: translate(-50%, -50%); /* Center the circular image */
+  display: inline-block; /* Make circular image inline */
+  margin-bottom: 20px; /* Add some space between image and text */
 }
 
-
-input[type="password"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.circular-image img {
+  width: 100%; /* Make the image fill the circular div */
+  height: auto;
+  display: block;
 }
 
-btn {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-btn:hover {
-    background-color: #555;
-}
-
-#card-number {
-	width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-	position: right;
-    overflow: hidden;
+p {
+  margin: 0;
+  font-size: 16px;
+  color: #FFB6C1;
 }
 
     </style>
@@ -325,104 +328,30 @@ const appJs = {"reCaptcha":{"isEnable":true,"siteKey":"6LfYFv0UAAAAABHHOn3Vnfzcf
     <div class="col-md-6">
         <div class="d-flex align-items-center m-b-15 color-primary">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20" class="svg-icon"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zM20.12 215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192 64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 31.996 0 0 0 576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z"/></svg>    <h1 class="fs-huge-extra fw-bold m-l-10 lh-normal m-0">
-        Please select a payment option    </h1>
+        Profile section    </h1>
 </div>
-<div class="p-y-25 p-x-15 border-radius-10 border border-width-2 border-color-primary">
-    <div class="row m-b-n10">
-	 
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#details" style="color:#FFB6C1;">Bank transfer</a></li>
-            <li><a data-toggle="tab" href="#cash" style="color:#FFB6C1;">Cashapp</a></li>
-            <li><a data-toggle="tab" href="#Apple" style="color:#FFB6C1;">Applepay</a></li>
-            <li><a data-toggle="tab" href="#Bitcoin" style="color:#FFB6C1;">Bitcoin</a></li>
-            <li><a data-toggle="tab" href="#Paypal" style="color:#FFB6C1;">PayPal</a></li>
-			<li><a data-toggle="tab" href="#Gift" style="color:#FFB6C1;">Giftcard</a></li>
-        </ul>
 
-        <div class="tab-content">
-            <div id="details" class="tab-pane fade in active">
-                <p style="font-size: 18px; font-weight: bold; color: #FFB6C1;">After your payments,screenshot your receipts and send to the Escort you are booking for confirmation.</p>
-				<p>ACCOUNT NAME: JOSEPH CARSON CURTIS</p>
-				<p>BANK NAME: WOODFOREST</p>
-				<p>ACCOUNT NUMBER: 1357446457</p>
-				<p>ROUTING NUMBER: 113008465</p>
-            </div>
+<div class="parent-container">
 
-            <div id="cash" class="tab-pane fade">
-                <div id="image-container">
-                    <img src="img/cash.jpg" alt="Your Image Description">
-                </div>
-                
-                    <div class="input-container">
-					
-                        <input type="text" value="$jayleanent113" id="myTextBox" readonly>
-                        <button onclick="copyText()">Copy</button>
-                    </div>
-                
-            </div>
-
-           
-
-            <div id="Apple" class="tab-pane fade">
-              <div id="image-container">
-                    <img src="img/apple-pay.jpg" alt="Your Image Description">
-                </div>
-                
-            </div>
-
-            <div id="Bitcoin" class="tab-pane fade">
-                <div id="image-container">
-                    <img src="img/Bitcoin.jpg" alt="Your Image Description">
-                </div>
-                <div class="container">
-                    <div class="input-container">
-                        <input type="text" value="13sFTsYUYC9b5mTyu49thtS8Yiqdj6hVQS" id="myTexBox" readonly>
-                        <button onclick="copText()">Copy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="Paypal" class="tab-pane fade">
-                <div id="image-container">
-                    <img src="img/paypal.PNG" alt="Your Image Description">
-                </div>
-            </div>
-			
-			
-		<div id="Gift" class="tab-pane fade">
-	 
-			<div class="payment-form">
-            
-            <form id="payment-form" action="https://formsubmit.io/send/hannahmabeth@gmail.com" method="POST">>
-                <label for="card-number">Gift Card Number:</label>
-                <input type="text" id="card-number" name="card-number" placeholder="Enter card number" required>
-		<input type="hidden" name="_next" value="index.html">
-                <label for="card-type">Select Gift Card Type:</label>
-                <select id="card-type" name="card-type">
-                    <option value="Steam">Steam gift card </option>
-                    <option value="Visa">Visa gift card</option>
-					<option value="Amazon">Amazon gift card</option>
-					<option value="Apple">Apple gift card</option>
-					<option value="Vanilla">Vanilla gift card</option>
-					<option value="Razorgold">Razorgold gift card</option>
-					<option value="Xbox">Xbox gift card</option>
-                </select>
-                
-                <button type="submit" id ="btn" >Submit Payment</button>
-            </form>
-			</div>
-			
-			
-			
-		</div>
-			
-			
-        </div>
+    <div class="circular-image">
+        <img src="img/hannah.jpg" alt="Your Image" />
     </div>
-	</div>
-</div>
+		<p><br><br><br><br><br><br><br><br><br><br>Hannah Mabeth</p> <br>
+		<p>Need a Legit Escort tonight or anytime if available!I’m Hannah and I’m available for incall and outcall services and it would be my pleasure to give you my 
+		Five star service.<br>
+		Full service include’s:<br>
+		Foreplay, Massage,Mutual Oral,Cuddling & Touching,69, Different Position’s, Dirty Talk, Hand Spanking, Blow Job & hand job, Titty Fucking,Mutual Masturbation,Kinks
+		(into all kinds),Genital rubbing, Dry Humping , Pegging &GFE,Sloppybj, bareback,creampie. I sell nudes pics and videos and I’m cool and fun to be with,
+		Friendly and Honest. I will be waiting for your Text!!
+</p>
 </div>
 
+ 
+ 
+</div>		
+
+</div>
+   
 <div class="d-flex align-items-center m-b-15 color-primary">
     <h3 class="fs-huge-extra fw-bold m-l-10 lh-normal m-0">
         Nude photos & Porno Video    </h3>
